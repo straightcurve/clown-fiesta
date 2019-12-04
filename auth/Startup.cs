@@ -12,8 +12,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Configuration;
+using auth.Configuration;
 using System.Text;
+using auth.Services;
 
 namespace auth
 {
@@ -52,6 +53,8 @@ namespace auth
                     ValidateAudience = false,
                 };
             });
+
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
