@@ -1,0 +1,8 @@
+build
+Library
+Logs
+obj
+Temp
+
+*.blob
+*.csproj

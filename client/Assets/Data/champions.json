@@ -1,0 +1,26 @@
+{
+  "list": [
+    {
+      "name": "2B",
+      "iconPath": "Art/2b_icon",
+      "modelPath": "Models/xbot Variant",
+      "abilities": [
+        {
+          "name": "Some ability name",
+          "iconPath": "Art/fire_storm",
+          "description": "This ability does something cool."
+        },
+        {
+          "name": "Some other ability name",
+          "iconPath": "Art/fire_storm",
+          "description": "This ability does something cool too, but better."
+        },
+        {
+          "name": "More abilities should be in this list",
+          "iconPath": "Art/fire_storm",
+          "description": "Also this list should be scrollable."
+        }
+      ]
+    }
+  ]
+}

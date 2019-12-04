@@ -1,0 +1,16 @@
+{
+  "abilities": [
+    {
+      "key": 113,
+      "slug": "flamestrike"
+    },
+    {
+      "mouseButton": 0,
+      "slug": "fireball"
+    },
+    {
+      "mouseButton": 1,
+      "slug": "fire_storm"
+    }
+  ]
+}
