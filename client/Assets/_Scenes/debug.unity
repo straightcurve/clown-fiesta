@@ -165,6 +165,11 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 1555526155}
+    - target: {fileID: 1856522830030188455, guid: 4a84de1f04f22ed09a7c7199d079cec5,
+        type: 3}
+      propertyPath: cooldown
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3939370919937046162, guid: 4a84de1f04f22ed09a7c7199d079cec5,
         type: 3}
       propertyPath: movement

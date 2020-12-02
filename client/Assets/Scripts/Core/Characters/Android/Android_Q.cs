@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,19 +14,24 @@ namespace ClownFiesta.Characters.Android {
         private Movement movement;
         private Animator animator;
 
+        private bool animationFinished;
 
-        public void Cast() {
+        protected override IEnumerator _Cast() {
             movement.CanMove = false;
             movement.CanRotate = false;
 
             animator.SetTrigger("Q");
+
+            while (!animationFinished)
+                yield return null;
+
+            movement.CanMove = true;
+            movement.CanRotate = true;
+            animationFinished = false;
         }
 
         public void OnAnimationFinished_Q() {
-            movement.CanMove = true;
-            movement.CanRotate = true;
-
-            print("finished");
+            animationFinished = true;
         }
 
         public void Activate_Q() {
@@ -34,8 +40,6 @@ namespace ClownFiesta.Characters.Android {
 
         public void Deactivate_Q() {
             hitbox.Deactivate();
-
-            print("deactivated");
         }
 
         private void OnEnable() {
@@ -45,7 +49,9 @@ namespace ClownFiesta.Characters.Android {
                 animator = GetComponent<Animator>();
         }
 
-        private void Update() {
+        protected override void Update() {
+            base.Update();
+
             if (!_enabled)
                 return;
 

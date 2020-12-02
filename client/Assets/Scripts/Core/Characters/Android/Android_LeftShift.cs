@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,16 +13,22 @@ namespace ClownFiesta.Characters.Android {
         private Movement movement;
         private Animator animator;
 
-        public void Cast() {
+        private bool animationFinished;
+
+        protected override IEnumerator _Cast() {
             movement.CanRotate = false;
 
             animator.SetTrigger("LeftShift");
+
+            while (!animationFinished)
+                yield return null;
+
+            movement.CanRotate = true;
+            animationFinished = false;
         }
 
         public void OnAnimationFinished_LeftShift() {
-            movement.CanRotate = true;
-
-            print("finished");
+            animationFinished = true;
         }
 
         public void Activate_LeftShift() {
@@ -30,8 +37,6 @@ namespace ClownFiesta.Characters.Android {
 
         public void Deactivate_LeftShift() {
             hurtbox.enabled = true;
-
-            print("deactivated");
         }
 
         private void OnEnable() {
@@ -43,7 +48,9 @@ namespace ClownFiesta.Characters.Android {
                 hurtbox = GetComponent<Entity>()?.Hurtbox;
         }
 
-        private void Update() {
+        protected override void Update() {
+            base.Update();
+
             if (!_enabled)
                 return;
 

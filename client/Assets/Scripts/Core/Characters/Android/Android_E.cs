@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,18 +14,24 @@ namespace ClownFiesta.Characters.Android {
         private Movement movement;
         private Animator animator;
 
-        public void Cast() {
+        private bool animationFinished;
+
+        protected override IEnumerator _Cast() {
             movement.CanMove = false;
             movement.CanRotate = false;
 
             animator.SetTrigger("E");
+
+            while (!animationFinished)
+                yield return null;
+
+            movement.CanMove = true;
+            movement.CanRotate = true;
+            animationFinished = false;
         }
 
         public void OnAnimationFinished_E() {
-            movement.CanMove = true;
-            movement.CanRotate = true;
-
-            print("finished");
+            animationFinished = true;
         }
 
         public void Activate_E() {
@@ -33,8 +40,6 @@ namespace ClownFiesta.Characters.Android {
 
         public void Deactivate_E() {
             hitbox.Deactivate();
-
-            print("deactivated");
         }
 
         private void OnEnable() {
@@ -44,7 +49,9 @@ namespace ClownFiesta.Characters.Android {
                 animator = GetComponent<Animator>();
         }
 
-        private void Update() {
+        protected override void Update() {
+            base.Update();
+
             if (!_enabled)
                 return;
 

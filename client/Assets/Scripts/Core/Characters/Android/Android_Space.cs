@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,15 +18,17 @@ namespace ClownFiesta.Characters.Android {
         public Transform origin;
         private Movement movement;
 
-        public void Cast(Vector2 origin, Vector2 direction) {
+        protected override IEnumerator _Cast() {
             var projectile = Instantiate(prefab).GetComponent<LinearProjectile>();
-            projectile.Direction = direction;
+            projectile.Direction = movement.FacingDirection;
             projectile.Speed = speed;
             projectile.Range = range;
-            projectile.transform.position = origin;
+            projectile.transform.position = new Vector2(origin.position.x, origin.position.y);
             projectile.Hit += OnHit;
 
             projectile.Launch();
+
+            yield return null;
         }
 
         private void OnEnable() {
@@ -33,12 +36,14 @@ namespace ClownFiesta.Characters.Android {
                 movement = GetComponent<Movement>();
         }
 
-        private void Update() {
+        protected override void Update() {
+            base.Update();
+
             if (!_enabled)
                 return;
 
             if (Input.GetKeyDown(KeyCode.Space))
-                Cast(new Vector2(origin.position.x, origin.position.y), movement.FacingDirection);
+                Cast();
         }
 
         private void OnHit(HitEventArgs args) {
