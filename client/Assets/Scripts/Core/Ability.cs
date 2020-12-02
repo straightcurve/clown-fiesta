@@ -14,7 +14,9 @@ namespace ClownFiesta.Core {
         [SerializeField]
         protected float _cooldownCounter;
 
-        [SerializeField] protected float cooldown;
+        [ReadOnly]
+        [SerializeField]
+        protected float cooldown;
 
         public virtual bool OnCooldown => _cooldownCounter > 0;
 

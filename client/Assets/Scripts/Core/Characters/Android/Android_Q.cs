@@ -4,10 +4,13 @@ using UnityEngine;
 
 using ClownFiesta.Core;
 using ClownFiesta.Core.Movement;
+using ClownFiesta.Characters.Android.Data;
 
 namespace ClownFiesta.Characters.Android {
 
     public class Android_Q : Ability {
+
+        [SerializeField] protected Q_AndroidAbilityData data;
 
         public Hitscan hitbox;
 
@@ -15,6 +18,15 @@ namespace ClownFiesta.Characters.Android {
         private Animator animator;
 
         private bool animationFinished;
+
+        private void Awake() {
+            if (data == null) {
+                Debug.LogError("data not set");
+                return;
+            }
+
+            cooldown = data.Cooldown;
+        }
 
         protected override IEnumerator _Cast() {
             movement.CanMove = false;

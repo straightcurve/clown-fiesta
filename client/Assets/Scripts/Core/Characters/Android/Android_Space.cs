@@ -4,10 +4,13 @@ using UnityEngine;
 
 using ClownFiesta.Core;
 using ClownFiesta.Core.Movement;
+using ClownFiesta.Characters.Android.Data;
 
 namespace ClownFiesta.Characters.Android {
 
     public class Android_Space : Ability {
+
+        [SerializeField] protected Space_AndroidAbilityData data;
 
         [Header("Bullet")]
         public GameObject prefab;
@@ -17,6 +20,15 @@ namespace ClownFiesta.Characters.Android {
 
         public Transform origin;
         private Movement movement;
+
+        private void Awake() {
+            if (data == null) {
+                Debug.LogError("data not set");
+                return;
+            }
+
+            cooldown = data.Cooldown;
+        }
 
         protected override IEnumerator _Cast() {
             var projectile = Instantiate(prefab).GetComponent<LinearProjectile>();

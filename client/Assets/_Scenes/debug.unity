@@ -161,55 +161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1555526155, guid: 4a84de1f04f22ed09a7c7199d079cec5, type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 1555526155}
-    - target: {fileID: 1856522830030188455, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: cooldown
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3939370919937046162, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 1555526155}
-    - target: {fileID: 4352320680598854710, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 1555526155}
-    - target: {fileID: 4548032124002169870, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 1555526155}
-    - target: {fileID: 6350286140627353567, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: movement
-      value: 
-      objectReference: {fileID: 1555526155}
-    - target: {fileID: 6350286140627353567, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: ActualCharacter._level
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350286140627353567, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: ActualCharacter._health
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350286140627353567, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: ActualCharacter._maxHealth
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 8838142501732310011, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8838142501732310012, guid: 4a84de1f04f22ed09a7c7199d079cec5,
         type: 3}
       propertyPath: m_RootOrder
@@ -427,25 +378,6 @@ BoxCollider2D:
     type: 3}
   m_PrefabInstance: {fileID: 1977787886}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1555526154 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8838142501732310015, guid: 4a84de1f04f22ed09a7c7199d079cec5,
-    type: 3}
-  m_PrefabInstance: {fileID: 284472580}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1555526155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555526154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0049bc1c1575e9d9147f0605b3340b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!850595691 &1679614621
 LightingSettings:
   m_ObjectHideFlags: 0
