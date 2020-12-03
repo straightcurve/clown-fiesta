@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: E_Android
   m_EditorClassIdentifier: 
   Cooldown: 0.35
+  duration: 0.25
+  anticipationTime: 0
+  returnTime: 0

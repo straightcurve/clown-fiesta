@@ -17,48 +17,48 @@ namespace ClownFiesta.Characters.Android {
         private Movement movement;
         private Animator animator;
 
-        private bool animationFinished;
-
-        private void Awake() {
-            if (data == null) {
-                Debug.LogError("data not set");
-                return;
-            }
-
-            cooldown = data.Cooldown;
-        }
-
         protected override IEnumerator _Cast() {
             movement.CanMove = false;
             movement.CanRotate = false;
 
             animator.SetTrigger("E");
 
-            while (!animationFinished)
+            var duration = data.duration;
+            var anticipationTime = data.anticipationTime * data.duration;
+            var returnTime = data.returnTime * data.duration;
+            while (duration > 0f) {
+                duration -= Time.deltaTime;
+
+                if (CanDealDamage && data.duration - duration > returnTime)
+                    hitbox.Deactivate();
+                else if (!CanDealDamage && data.duration - duration > anticipationTime)
+                    hitbox.Activate();
+
                 yield return null;
+            }
+
+            if (returnTime == data.duration)
+                hitbox.Deactivate();
 
             movement.CanMove = true;
             movement.CanRotate = true;
-            animationFinished = false;
         }
 
-        public void OnAnimationFinished_E() {
-            animationFinished = true;
-        }
+        public bool CanDealDamage => hitbox.IsActive;
 
-        public void Activate_E() {
-            hitbox.Activate();
-        }
-
-        public void Deactivate_E() {
-            hitbox.Deactivate();
-        }
-
-        private void OnEnable() {
+        private void Awake() {
             if (movement == null)
                 movement = GetComponent<Movement>();
             if (animator == null)
                 animator = GetComponent<Animator>();
+
+            if (data == null) {
+                Debug.LogError("data not set");
+                return;
+            }
+
+            cooldown = data.Cooldown;
+            animator.SetFloat("E_AnimationSpeed", 1 / data.duration);
         }
 
         protected override void Update() {

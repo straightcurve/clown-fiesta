@@ -10,5 +10,7 @@ namespace ClownFiesta.Core {
 
         public void Activate() => collider.enabled = true;
         public void Deactivate() => collider.enabled = false;
+
+        public bool IsActive => collider.enabled;
     }
 }
