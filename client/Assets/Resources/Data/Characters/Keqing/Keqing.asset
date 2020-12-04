@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9cdfde1bf57e3345838ff3695e69e23, type: 3}
-  m_Name: Enemy
+  m_Name: Keqing
   m_EditorClassIdentifier: 
-  MaxHealth: 10000
+  MaxHealth: 500

@@ -15,4 +15,4 @@ MonoBehaviour:
   Cooldown: 0.35
   duration: 0.25
   anticipationTime: 0
-  returnTime: 0
+  returnTime: 1

@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9cdfde1bf57e3345838ff3695e69e23, type: 3}
-  m_Name: Enemy
+  m_Script: {fileID: 11500000, guid: 9ab2599803c0f27a2b1db4c43de4771c, type: 3}
+  m_Name: Q_Keqing
   m_EditorClassIdentifier: 
-  MaxHealth: 10000
+  Cooldown: 3
+  daggerLifespan: 5
+  spawnDaggerAnticipationTime: 0.25
+  daggerDamageRadius: 3.1
+  damage: 50

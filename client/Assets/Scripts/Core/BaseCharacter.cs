@@ -25,6 +25,14 @@ namespace ClownFiesta.Core {
             _health = MaxHealth;
         }
 
+        public virtual void Hide() {
+
+        }
+
+        public virtual void Show() {
+            
+        }
+
         public virtual void TakeDamage(float amount) {
             if (!Alive)
                 return;

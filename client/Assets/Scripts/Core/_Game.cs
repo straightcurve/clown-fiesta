@@ -1,14 +1,12 @@
 using UnityEngine;
 
-namespace ClownFiesta.Core {
-
-    public class Game : MonoBehaviour
+    public class Game
     {
-        public static Vector3 MouseLocation;
-        public Camera MainCamera;
-        public LayerMask PlaneMask;
+        public static Vector3 MouseLocation { get; set; }
+        public static Camera MainCamera { get; set; }
+        public static LayerMask PlaneMask { get; set; }
 
-        private void Update()
+        public static void Update()
         {
             if (MainCamera != null)
             {
@@ -20,4 +18,3 @@ namespace ClownFiesta.Core {
             }
         }
     }
-}

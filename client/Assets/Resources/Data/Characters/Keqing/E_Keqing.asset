@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e431a3e28fc56fbbb9321e352419abf, type: 3}
+  m_Name: E_Keqing
+  m_EditorClassIdentifier: 
+  Cooldown: 5
+  radius: 5
+  damage: 100
+  finalSlashDamage: 500
+  delayBetweenSlashes: 0.2
+  distanceBehindTarget: 1.15
+  cloneFadeOut: 0.5
+  clonePrefab: {fileID: 6163027215331153614, guid: 962f1a156181f93bbab469b92b63b5c6,
+    type: 3}
+  lineColor: {r: 0.612216, g: 0, b: 1, a: 1}
