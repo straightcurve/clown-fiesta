@@ -96,16 +96,18 @@ namespace ClownFiesta.Characters.Keqing {
                     yield return new WaitForSeconds(delayBetweenSlashes);
                 }
 
-                lineRenderer.SetPosition(0, unique[c - 1].transform.position);
-                slashOrigin = unique[c - 1].transform.position;
+                if ((unique.Count & 1) == 1) {
+                    lineRenderer.SetPosition(0, unique[c - 1].transform.position);
+                    slashOrigin = unique[c - 1].transform.position;
 
-                lineRenderer.SetPosition(1, unique[c].transform.position);
-                dealDamage(finalSlashDamage);
-                distance = (unique[c].transform.position - slashOrigin);
-                mag = distance.magnitude + distanceBehindTarget;
-                clones.Add(CreateClone(slashOrigin + distance.normalized * mag));
-                slashOrigin = unique[c].transform.position;
-                yield return new WaitForSeconds(delayBetweenSlashes);
+                    lineRenderer.SetPosition(1, unique[c].transform.position);
+                    dealDamage(finalSlashDamage);
+                    distance = (unique[c].transform.position - slashOrigin);
+                    mag = distance.magnitude + distanceBehindTarget;
+                    clones.Add(CreateClone(slashOrigin + distance.normalized * mag));
+                    slashOrigin = unique[c].transform.position;
+                    yield return new WaitForSeconds(delayBetweenSlashes);
+                }
 
                 lineRenderer.positionCount = 0;
                 
