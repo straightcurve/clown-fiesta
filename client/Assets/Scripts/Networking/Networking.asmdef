@@ -1,6 +1,8 @@
 {
-    "name": "Core",
-    "references": [],
+    "name": "Networking",
+    "references": [
+        "GUID:cf11e0fd1b3063473a9d175d9c2291f6"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
