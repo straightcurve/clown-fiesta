@@ -13,14 +13,15 @@ namespace ClownFiesta.Networking
 
         static UdpClient client;
 
-        static bool connected = false;
+        // static bool connected = false;
+        static bool connected => client.Client.Connected;
 
         public static void Connect() {
             client = new UdpClient(6001);
             try {
                 client.Connect("127.0.0.1", 6000);
 
-                connected = true;
+                // connected = true;
 
                 Task.Run(() => {
                     Receive();
@@ -47,8 +48,8 @@ namespace ClownFiesta.Networking
                 //                             RemoteIpEndPoint.Port.ToString());
 
                 }
-            catch (Exception e ) {
-                Console.WriteLine(e.ToString());
+            catch (Exception e) {
+                Debug.Log(e.ToString());
             }
         }
 
@@ -100,7 +101,7 @@ namespace ClownFiesta.Networking
         }
 
         public static void Cleanup() {
-            connected = false;
+            // connected = false;
             client.Close();
         }
 
