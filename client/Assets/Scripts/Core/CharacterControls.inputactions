@@ -1,5 +1,5 @@
 {
-    "name": "Controls",
+    "name": "CharacterControls",
     "maps": [
         {
             "name": "Gameplay",
@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Aim",
+                    "type": "Value",
+                    "id": "1c596641-c1f6-436b-a829-73b2d9f09766",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -45,7 +53,7 @@
                 {
                     "name": "WASD",
                     "id": "2d58e9a6-c7e9-4c90-baa9-cc477c9d5703",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -138,6 +146,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "E",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61794ed5-08c7-487a-a031-e0ea143bee70",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KB+M",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

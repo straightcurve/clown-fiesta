@@ -14,11 +14,12 @@ namespace ClownFiesta.Characters.Keqing {
         [SerializeField] protected Q_KeqingAbilityData data;
 
         public GameObject daggerPrefab;
+        public LayerMask planeMask;
 
         private Movement movement;
         private Animator animator;
-
         private readonly List<Character> unique = new List<Character>();
+        private MousePositionHelper helper;
 
         protected override IEnumerator _Cast() {
             //  spawn dagger at mouse location
@@ -27,7 +28,7 @@ namespace ClownFiesta.Characters.Keqing {
             //  deal aoe damage
 
             var dagger = Instantiate(daggerPrefab);
-            dagger.transform.position = ClownFiesta.Core.Game.MouseLocation;
+            dagger.transform.position = helper.MouseLocation;
 
             animator.SetTrigger("Q_Spawn_Dagger");
 
@@ -38,7 +39,7 @@ namespace ClownFiesta.Characters.Keqing {
                 daggerLifespan -= Time.deltaTime;
 
                 if (data.daggerLifespan - daggerLifespan > spawnDaggerAnticipationTime) {
-                    shouldTeleport = Input.GetKeyDown(KeyCode.Q);
+                    shouldTeleport = InputAction.triggered;
                     if (shouldTeleport)
                         break;
                 }
@@ -96,10 +97,18 @@ namespace ClownFiesta.Characters.Keqing {
             // animator.SetFloat("Q_AnimationSpeed", 1 / data.duration);
         }
 
-        public void OnButtonPressed(InputAction.CallbackContext ctx) {
-            if (!_enabled)
-                return;
+        private void Start() {
+            helper = new MousePositionHelper(Camera.main, planeMask, controls.Gameplay.Aim);
+        }
 
+        protected override void Update()
+        {
+            base.Update();
+
+            helper.Update();
+        }
+
+        protected override void OnButtonPressed(InputAction.CallbackContext ctx) {
             Cast();
         }
     }

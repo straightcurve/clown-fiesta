@@ -5,6 +5,7 @@ using UnityEngine;
 using ClownFiesta.Core;
 using ClownFiesta.Core.Movement;
 using ClownFiesta.Characters.Android.Data;
+using UnityEngine.InputSystem;
 
 namespace ClownFiesta.Characters.Android {
 
@@ -43,19 +44,9 @@ namespace ClownFiesta.Characters.Android {
             yield return null;
         }
 
-        private void OnEnable() {
+        private void Start() {
             if (movement == null)
                 movement = GetComponent<Movement>();
-        }
-
-        protected override void Update() {
-            base.Update();
-
-            if (!_enabled)
-                return;
-
-            if (Input.GetKeyDown(KeyCode.Space))
-                Cast();
         }
 
         private void OnHit(HitEventArgs args) {
@@ -69,6 +60,10 @@ namespace ClownFiesta.Characters.Android {
             }
 
             character.TakeDamage(damage);
+        }
+
+        protected override void OnButtonPressed(InputAction.CallbackContext ctx) {
+            Cast();
         }
     }
 }

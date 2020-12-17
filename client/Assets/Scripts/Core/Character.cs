@@ -9,6 +9,7 @@ namespace ClownFiesta.Core {
         public CharacterData data;
         public ICharacter ActualCharacter => _ac;
         protected ICharacter _ac;
+        public CharacterControls controls;
 
         protected Movement.Movement movement;
 

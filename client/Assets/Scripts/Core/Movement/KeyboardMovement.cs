@@ -6,8 +6,12 @@ namespace ClownFiesta.Core.Movement {
 
     public class KeyboardMovement : Movement {
 
-        protected override void OnEnable() {
-            base.OnEnable();
+        protected CharacterControls controls;
+
+        protected virtual void Start() {
+            controls = this.GetComponent<Character>().controls;
+            controls.Gameplay.Move.performed += OnMove;
+            controls.Gameplay.Move.canceled += OnMove;
         }
 
         protected override void FixedUpdate() {

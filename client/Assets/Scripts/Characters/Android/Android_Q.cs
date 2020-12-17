@@ -5,6 +5,7 @@ using UnityEngine;
 using ClownFiesta.Core;
 using ClownFiesta.Core.Movement;
 using ClownFiesta.Characters.Android.Data;
+using UnityEngine.InputSystem;
 
 namespace ClownFiesta.Characters.Android {
 
@@ -61,14 +62,8 @@ namespace ClownFiesta.Characters.Android {
                 animator = GetComponent<Animator>();
         }
 
-        protected override void Update() {
-            base.Update();
-
-            if (!_enabled)
-                return;
-
-            if (Input.GetKeyDown(KeyCode.Q))
-                Cast();
+        protected override void OnButtonPressed(InputAction.CallbackContext ctx) {
+            Cast();
         }
 
     }

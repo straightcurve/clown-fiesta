@@ -11,4 +11,4 @@ ScriptedImporter:
   generateWrapperCode: 1
   wrapperCodePath: 
   wrapperClassName: 
-  wrapperCodeNamespace: ClownFiesta.Characters.Keqing
+  wrapperCodeNamespace: ClownFiesta.Core

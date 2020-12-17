@@ -15,8 +15,6 @@ namespace ClownFiesta.Characters.Keqing {
         [SerializeField] protected E_KeqingAbilityData data;
         [SerializeField] protected LineRenderer lineRenderer;
 
-        KeqingControls controls;
-        
         protected Keqing keqing;
 
         private Movement movement;
@@ -141,7 +139,7 @@ namespace ClownFiesta.Characters.Keqing {
             return this;
         }
 
-        private void Awake() {
+        private void Start() {
             if (movement == null)
                 movement = GetComponent<Movement>();
             if (animator == null)
@@ -162,13 +160,7 @@ namespace ClownFiesta.Characters.Keqing {
             // animator.SetFloat("E_AnimationSpeed", 1 / data.duration);
         }
 
-        public void OnButtonPressed(InputAction.CallbackContext ctx) {
-            if (!_enabled)
-                return;
-
-            if (!ctx.started)
-                return;
-
+        protected override void OnButtonPressed(InputAction.CallbackContext ctx) {
             Cast();
         }
     }

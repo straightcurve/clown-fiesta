@@ -21,5 +21,9 @@ namespace ClownFiesta.Core {
                 }
             }
         }
+
+        private void Start() {
+            Application.targetFrameRate = 300;
+        }
     }
 }

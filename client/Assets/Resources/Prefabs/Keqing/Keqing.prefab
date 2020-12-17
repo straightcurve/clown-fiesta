@@ -129,55 +129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73dff91e8b32e0e3a87aedc249574a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enabled: 1
   _cooldownCounter: 0
   cooldown: 0
   data: {fileID: 11400000, guid: 620c7838835e04831871a11aa19f7ea1, type: 2}
   daggerPrefab: {fileID: 2715019968315490281, guid: 719de27f957e4cee98197a34f60f795e,
     type: 3}
---- !u!114 &2090144691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048029825592669865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0049bc1c1575e9d9147f0605b3340b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
---- !u!114 &2090144699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048029825592669865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ded3dfee3bcd109d88b109cdf5d2212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enabled: 1
-  _cooldownCounter: 0
-  cooldown: 0
-  data: {fileID: 11400000, guid: fb0eba2fa7fc9a868aa7a54513ff732c, type: 2}
-  lineRenderer: {fileID: 2090144700}
---- !u!114 &7136690555387679284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048029825592669865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 222ab38b5f7be50f2890cf654b192da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: cb82906faba8f451aa9dd7d86ce01285, type: 2}
+  planeMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &525048492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: be3c3bae4c7e23fd8b401916de374050,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -257,6 +216,48 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2090144691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048029825592669865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0049bc1c1575e9d9147f0605b3340b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+--- !u!114 &2090144699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048029825592669865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ded3dfee3bcd109d88b109cdf5d2212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldownCounter: 0
+  cooldown: 0
+  data: {fileID: 11400000, guid: fb0eba2fa7fc9a868aa7a54513ff732c, type: 2}
+  lineRenderer: {fileID: 2090144700}
+--- !u!114 &7136690555387679284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048029825592669865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ab38b5f7be50f2890cf654b192da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: cb82906faba8f451aa9dd7d86ce01285, type: 2}
 --- !u!1001 &358047167473503315
 PrefabInstance:
   m_ObjectHideFlags: 0

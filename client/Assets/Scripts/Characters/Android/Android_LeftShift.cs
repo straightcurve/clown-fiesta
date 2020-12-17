@@ -5,6 +5,7 @@ using UnityEngine;
 using ClownFiesta.Core;
 using ClownFiesta.Core.Movement;
 using ClownFiesta.Characters.Android.Data;
+using UnityEngine.InputSystem;
 
 namespace ClownFiesta.Characters.Android {
 
@@ -64,14 +65,8 @@ namespace ClownFiesta.Characters.Android {
             animator.SetFloat("LeftShift_AnimationSpeed", 1 / data.duration);
         }
 
-        protected override void Update() {
-            base.Update();
-
-            if (!_enabled)
-                return;
-
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-                Cast();
+        protected override void OnButtonPressed(InputAction.CallbackContext ctx) {
+            Cast();
         }
 
     }

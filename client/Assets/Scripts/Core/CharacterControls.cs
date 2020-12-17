@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Characters/Keqing/KeqingControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Core/CharacterControls.inputactions'
 
 using System;
 using System.Collections;
@@ -6,15 +6,15 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace ClownFiesta.Characters.Keqing
+namespace ClownFiesta.Core
 {
-    public class @KeqingControls : IInputActionCollection, IDisposable
+    public class @CharacterControls : IInputActionCollection, IDisposable
     {
         public InputActionAsset asset { get; }
-        public @KeqingControls()
+        public @CharacterControls()
         {
             asset = InputActionAsset.FromJson(@"{
-    ""name"": ""KeqingControls"",
+    ""name"": ""CharacterControls"",
     ""maps"": [
         {
             ""name"": ""Gameplay"",
@@ -43,6 +43,14 @@ namespace ClownFiesta.Characters.Keqing
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""1c596641-c1f6-436b-a829-73b2d9f09766"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -60,7 +68,7 @@ namespace ClownFiesta.Characters.Keqing
                 {
                     ""name"": ""WASD"",
                     ""id"": ""2d58e9a6-c7e9-4c90-baa9-cc477c9d5703"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -155,6 +163,17 @@ namespace ClownFiesta.Characters.Keqing
                     ""action"": ""E"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61794ed5-08c7-487a-a031-e0ea143bee70"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -194,6 +213,7 @@ namespace ClownFiesta.Characters.Keqing
             m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
             m_Gameplay_Q = m_Gameplay.FindAction("Q", throwIfNotFound: true);
             m_Gameplay_E = m_Gameplay.FindAction("E", throwIfNotFound: true);
+            m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -246,13 +266,15 @@ namespace ClownFiesta.Characters.Keqing
         private readonly InputAction m_Gameplay_Move;
         private readonly InputAction m_Gameplay_Q;
         private readonly InputAction m_Gameplay_E;
+        private readonly InputAction m_Gameplay_Aim;
         public struct GameplayActions
         {
-            private @KeqingControls m_Wrapper;
-            public GameplayActions(@KeqingControls wrapper) { m_Wrapper = wrapper; }
+            private @CharacterControls m_Wrapper;
+            public GameplayActions(@CharacterControls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Gameplay_Move;
             public InputAction @Q => m_Wrapper.m_Gameplay_Q;
             public InputAction @E => m_Wrapper.m_Gameplay_E;
+            public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -271,6 +293,9 @@ namespace ClownFiesta.Characters.Keqing
                     @E.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnE;
                     @E.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnE;
                     @E.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnE;
+                    @Aim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                    @Aim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                    @Aim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -284,6 +309,9 @@ namespace ClownFiesta.Characters.Keqing
                     @E.started += instance.OnE;
                     @E.performed += instance.OnE;
                     @E.canceled += instance.OnE;
+                    @Aim.started += instance.OnAim;
+                    @Aim.performed += instance.OnAim;
+                    @Aim.canceled += instance.OnAim;
                 }
             }
         }
@@ -311,6 +339,7 @@ namespace ClownFiesta.Characters.Keqing
             void OnMove(InputAction.CallbackContext context);
             void OnQ(InputAction.CallbackContext context);
             void OnE(InputAction.CallbackContext context);
+            void OnAim(InputAction.CallbackContext context);
         }
     }
 }

@@ -36,13 +36,11 @@ namespace ClownFiesta.Characters.Keqing {
         }
 
         public Keqing Inject(GameObject owner) {
-            var e = owner.GetComponent<Keqing_E>();
-            e.Inject(this);
-            _E = e;
             movement = owner.GetComponent<Movement>();
             owner.GetComponentsInChildren<SpriteRenderer>(renderers);
 
-            return this;
+            var controls = owner.GetComponent<Character>().controls;
+            return SetupAbilityControls(owner, controls);
         }
 
         public Keqing Inject(CharacterData data) {
@@ -53,13 +51,30 @@ namespace ClownFiesta.Characters.Keqing {
             return this;
         }
 
+        private Keqing SetupAbilityControls(GameObject owner, CharacterControls controls) {
+            var e = owner.GetComponent<Keqing_E>();
+            e.Inject(this)
+             .Inject(controls, controls.Gameplay.E);
+            _E = e;
+
+            var q = owner.GetComponent<Keqing_Q>();
+            q.Inject(controls, controls.Gameplay.Q);
+            _Q = q;
+
+            return this;
+        }
+
         protected override void OnDeath() {
             movement.CanMove = false;
             movement.CanRotate = false;
-            // _Q.Disable();
-            // _E.Disable();
-            // _LeftShift.Disable();
-            // _Space.Disable();
+            if (_Q != null)
+                _Q.Disable();
+            if (_E != null)
+                _E.Disable();
+            if (_LeftShift != null)
+                _LeftShift.Disable();
+            if (_Space != null)
+                _Space.Disable();
         }
     }
 }
