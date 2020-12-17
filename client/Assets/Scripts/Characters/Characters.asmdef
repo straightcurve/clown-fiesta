@@ -1,6 +1,7 @@
 {
-    "name": "Core",
+    "name": "Characters",
     "references": [
+        "GUID:cf11e0fd1b3063473a9d175d9c2291f6",
         "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],

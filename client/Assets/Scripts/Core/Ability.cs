@@ -32,6 +32,8 @@ namespace ClownFiesta.Core {
             if (OnCooldown)
                 return;
 
+            print("casted");
+
             _cooldownCounter = cooldown;
 
             StartCoroutine(_Cast());

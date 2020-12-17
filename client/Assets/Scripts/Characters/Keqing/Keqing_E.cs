@@ -6,6 +6,7 @@ using UnityEngine;
 using ClownFiesta.Core;
 using ClownFiesta.Core.Movement;
 using ClownFiesta.Characters.Keqing.Data;
+using UnityEngine.InputSystem;
 
 namespace ClownFiesta.Characters.Keqing {
 
@@ -13,6 +14,8 @@ namespace ClownFiesta.Characters.Keqing {
 
         [SerializeField] protected E_KeqingAbilityData data;
         [SerializeField] protected LineRenderer lineRenderer;
+
+        KeqingControls controls;
         
         protected Keqing keqing;
 
@@ -159,14 +162,14 @@ namespace ClownFiesta.Characters.Keqing {
             // animator.SetFloat("E_AnimationSpeed", 1 / data.duration);
         }
 
-        protected override void Update() {
-            base.Update();
-
+        public void OnButtonPressed(InputAction.CallbackContext ctx) {
             if (!_enabled)
                 return;
 
-            if (Input.GetKeyDown(KeyCode.E))
-                Cast();
+            if (!ctx.started)
+                return;
+
+            Cast();
         }
     }
 }

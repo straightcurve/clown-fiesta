@@ -10,6 +10,8 @@ namespace ClownFiesta.Core {
 
         private void Update()
         {
+            return;
+
             if (MainCamera != null)
             {
                 var ray = MainCamera.ScreenPointToRay(Input.mousePosition);

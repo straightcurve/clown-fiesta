@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core.csproj", "{718
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{569a85a2-4aab-f951-60bb-1b6fc96e8c70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "Characters.csproj", "{36e31352-a8b0-0549-f1e3-5448b47d3218}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Networking", "Networking.csproj", "{37442da8-7aa7-6cc4-07e0-8e4063f96b0e}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{ce9fc52f-b1bc-d313-fb79-5dd1af79a2af}"
@@ -18,6 +20,8 @@ Global
 		{718d5b2d-583a-93de-718b-ccf9e4420a12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{569a85a2-4aab-f951-60bb-1b6fc96e8c70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{569a85a2-4aab-f951-60bb-1b6fc96e8c70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36e31352-a8b0-0549-f1e3-5448b47d3218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36e31352-a8b0-0549-f1e3-5448b47d3218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37442da8-7aa7-6cc4-07e0-8e4063f96b0e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37442da8-7aa7-6cc4-07e0-8e4063f96b0e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ce9fc52f-b1bc-d313-fb79-5dd1af79a2af}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

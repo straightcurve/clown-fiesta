@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ClownFiesta.Core.Movement {
 
@@ -13,12 +14,9 @@ namespace ClownFiesta.Core.Movement {
             base.FixedUpdate();
         }
 
-        protected override void Update() {
-            Direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            Direction.Normalize();
-
-            base.Update();
+        public void OnMove(InputAction.CallbackContext ctx)
+        {
+            Direction = ctx.ReadValue<Vector2>().normalized;
         }
-
     }
 }
