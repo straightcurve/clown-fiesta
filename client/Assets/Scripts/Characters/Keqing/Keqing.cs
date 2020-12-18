@@ -38,9 +38,9 @@ namespace ClownFiesta.Characters.Keqing {
         public Keqing Inject(GameObject owner) {
             movement = owner.GetComponent<Movement>();
             owner.GetComponentsInChildren<SpriteRenderer>(renderers);
+            owner.GetComponent<Character>().ControllerChanged += SetupAbilityControls;
 
-            var controls = owner.GetComponent<Character>().controls;
-            return SetupAbilityControls(owner, controls);
+            return this;
         }
 
         public Keqing Inject(CharacterData data) {
@@ -51,17 +51,16 @@ namespace ClownFiesta.Characters.Keqing {
             return this;
         }
 
-        private Keqing SetupAbilityControls(GameObject owner, CharacterControls controls) {
+        private void SetupAbilityControls(Character owner) {
+            var controls = owner.Controller.Input.actions;
             var e = owner.GetComponent<Keqing_E>();
             e.Inject(this)
-             .Inject(controls, controls.Gameplay.E);
+             .Inject(controls.FindActionMap("Gameplay").FindAction("E"));
             _E = e;
 
             var q = owner.GetComponent<Keqing_Q>();
-            q.Inject(controls, controls.Gameplay.Q);
+            q.Inject(controls.FindActionMap("Gameplay").FindAction("Q"));
             _Q = q;
-
-            return this;
         }
 
         protected override void OnDeath() {

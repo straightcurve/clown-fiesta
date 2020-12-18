@@ -98,7 +98,8 @@ namespace ClownFiesta.Characters.Keqing {
         }
 
         private void Start() {
-            helper = new MousePositionHelper(Camera.main, planeMask, controls.Gameplay.Aim);
+            var aim = GetComponent<Character>().Controller.Input.actions.FindActionMap("Gameplay").FindAction("Aim");
+            helper = new MousePositionHelper(Camera.main, planeMask, aim);
         }
 
         protected override void Update()

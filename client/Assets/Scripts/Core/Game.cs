@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ClownFiesta.Core {
 
@@ -7,6 +9,11 @@ namespace ClownFiesta.Core {
         public static Vector3 MouseLocation;
         public Camera MainCamera;
         public LayerMask PlaneMask;
+        public PlayerInputManager inputManager;
+        public List<PlayerController> controllers = new List<PlayerController>();
+        public static List<PlayerController> Controllers;
+        public Transform overlay;
+        public CharacterSelectionMenu menu;
 
         private void Update()
         {
@@ -22,8 +29,21 @@ namespace ClownFiesta.Core {
             }
         }
 
+        private void Awake() {
+            Controllers = controllers;
+        }
+
         private void Start() {
             Application.targetFrameRate = 300;
+
+            inputManager.onPlayerJoined += (input) => {
+                Controllers.Add(new PlayerController(input));
+                input.transform.SetParent(transform);
+                input.name = $"Player {input.playerIndex + 1}";
+
+                var instance = Instantiate(menu.gameObject, overlay).GetComponent<CharacterSelectionMenu>();
+                instance.SetPlayerIndex(input.playerIndex);
+            };
         }
     }
 }

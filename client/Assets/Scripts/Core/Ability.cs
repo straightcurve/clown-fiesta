@@ -33,8 +33,6 @@ namespace ClownFiesta.Core {
         }
         private InputAction inputAction;
 
-        protected CharacterControls controls;
-
         public void Enable() => InputAction.Enable();
 
         public void Disable() => InputAction.Disable();
@@ -48,8 +46,7 @@ namespace ClownFiesta.Core {
             StartCoroutine(_Cast());
         }
 
-        public Ability Inject(CharacterControls controls, InputAction onButtonPressAction) {
-            this.controls = controls;
+        public Ability Inject(InputAction onButtonPressAction) {
             InputAction = onButtonPressAction;
             return this;
         }

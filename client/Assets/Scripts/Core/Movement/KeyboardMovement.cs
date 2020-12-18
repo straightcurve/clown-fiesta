@@ -6,12 +6,13 @@ namespace ClownFiesta.Core.Movement {
 
     public class KeyboardMovement : Movement {
 
-        protected CharacterControls controls;
+        protected PlayerController controller;
 
         protected virtual void Start() {
-            controls = this.GetComponent<Character>().controls;
-            controls.Gameplay.Move.performed += OnMove;
-            controls.Gameplay.Move.canceled += OnMove;
+            controller = GetComponent<Character>().Controller;
+            var move = controller.Input.actions.FindActionMap("Gameplay").FindAction("Move");
+            move.performed += OnMove;
+            move.canceled += OnMove;
         }
 
         protected override void FixedUpdate() {

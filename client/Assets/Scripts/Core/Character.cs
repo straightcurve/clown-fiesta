@@ -9,7 +9,16 @@ namespace ClownFiesta.Core {
         public CharacterData data;
         public ICharacter ActualCharacter => _ac;
         protected ICharacter _ac;
-        public CharacterControls controls;
+
+        public PlayerController Controller {
+            get => controller;
+            set {
+                controller = value;
+                ControllerChanged?.Invoke(this);
+            }
+        }
+        protected PlayerController controller;
+        public event Action<Character> ControllerChanged;
 
         protected Movement.Movement movement;
 
