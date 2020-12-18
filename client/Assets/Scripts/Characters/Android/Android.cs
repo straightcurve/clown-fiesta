@@ -23,12 +23,24 @@ namespace ClownFiesta.Characters.Android {
             _LeftShift = owner.GetComponent<Android_LeftShift>();
             _Space = owner.GetComponent<Android_Space>();
             movement = owner.GetComponent<Movement>();
+            owner.GetComponent<Character>().ControllerChanged += SetupAbilityControls;
 
             _maxHealth = data.MaxHealth;
 
             this.data = data;
 
             RestoreFullHealth();
+        }
+
+        private void SetupAbilityControls(Character owner) {
+            var controls = owner.Controller.Input.actions;
+            var e = owner.GetComponent<Android_E>();
+            e.Inject(controls.FindActionMap("Gameplay").FindAction("E"));
+            _E = e;
+
+            var q = owner.GetComponent<Android_Q>();
+            q.Inject(controls.FindActionMap("Gameplay").FindAction("Q"));
+            _Q = q;
         }
 
         public float PassiveMultiplier {

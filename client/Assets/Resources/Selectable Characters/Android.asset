@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee9f0d0a7d78e589ab8910462a49e44, type: 3}
+  m_Name: Android
+  m_EditorClassIdentifier: 
+  characterName: Android
+  characterPrefab: {fileID: -4886218899181373589, guid: 4a84de1f04f22ed09a7c7199d079cec5,
+    type: 3}
