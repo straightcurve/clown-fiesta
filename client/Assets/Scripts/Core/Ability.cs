@@ -11,11 +11,9 @@ namespace ClownFiesta.Core {
         [SerializeField]
         protected bool _enabled => InputAction.enabled;
 
-        [ReadOnly]
         [SerializeField]
         protected float _cooldownCounter;
 
-        [ReadOnly]
         [SerializeField]
         protected float cooldown;
 
