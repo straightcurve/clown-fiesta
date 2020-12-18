@@ -184,6 +184,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2527297315116767171, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4383541399991417593, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
         type: 3}
       propertyPath: m_RootOrder
@@ -244,11 +249,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keqing
       objectReference: {fileID: 0}
+    - target: {fileID: 4383541399991417594, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383541400558724835, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329534749139310319, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6171121791107401205, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
         type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 7136690555387679284}
+    - target: {fileID: 6996515086318118467, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2184997830543826650, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0bf3a7cf4e6dc767fad5410daa80c6bc, type: 3}
