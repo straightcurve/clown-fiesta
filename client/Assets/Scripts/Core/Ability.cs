@@ -56,6 +56,10 @@ namespace ClownFiesta.Core {
             _cooldownCounter -= Time.deltaTime;
         }
 
+        protected virtual void OnDestroy() {
+            inputAction.started -= OnButtonPressed;
+        }
+
         protected abstract IEnumerator _Cast();
         protected abstract void OnButtonPressed(InputAction.CallbackContext ctx);
     }

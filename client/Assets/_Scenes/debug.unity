@@ -176,6 +176,7 @@ MonoBehaviour:
   controllers: []
   overlay: {fileID: 1193544230}
   menu: {fileID: 856558131139859375, guid: 066b32467d8ddb298abd21078de10564, type: 3}
+  teamSelectionMenu: {fileID: 1525668025}
 --- !u!114 &38880390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1454,7 @@ GameObject:
   - component: {fileID: 2147368416}
   - component: {fileID: 2147368417}
   m_Layer: 0
-  m_Name: Water
+  m_Name: Objective
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1494,6 +1495,21 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1024
+  Captured:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 38880389}
+        m_TargetAssemblyTypeName: ClownFiesta.Core.Game, Core
+        m_MethodName: OnCapturedObjective
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   team1ProgressImage: {fileID: 2009141424}
   team2ProgressImage: {fileID: 2051871843}
 --- !u!61 &2147368417

@@ -51,6 +51,14 @@ namespace ClownFiesta.Core
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Open Team Selection Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""063afbc5-57b6-4370-8eca-91f850f8a36b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -174,6 +182,50 @@ namespace ClownFiesta.Core
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""4fb13521-69d5-4295-a0e2-514ba4ad433d"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open Team Selection Menu"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Modifier"",
+                    ""id"": ""892bb17e-cffc-4ced-83a5-2b16dac6426c"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Open Team Selection Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button"",
+                    ""id"": ""a60091ba-09a6-4119-8a12-2e3f9bfe9033"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Open Team Selection Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f097eca-db39-4bb9-b55c-1c8b6fafb2c9"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Open Team Selection Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -212,6 +264,17 @@ namespace ClownFiesta.Core
                 },
                 {
                     ""name"": """",
+                    ""id"": ""08328f2c-bd39-46a4-889c-48c4c4d008d2"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""94359cca-7d88-42b4-a544-10289f3dda8e"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
@@ -220,6 +283,39 @@ namespace ClownFiesta.Core
                     ""action"": ""Close"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""0c520d36-b2ec-4b56-b18d-b5b946844f30"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Close"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""9c9cd432-8f79-4b2c-b82c-3abed18eef6e"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""c37736fb-0bda-4505-a597-9f6155456dd2"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -288,6 +384,159 @@ namespace ClownFiesta.Core
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""33730048-dcff-4159-aa54-8019ed597cff"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""8491bb90-521a-4dae-bba0-575e2b8f058c"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Close"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0857321-964a-49d1-9cad-5a9266d519d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Accept"",
+                    ""type"": ""Button"",
+                    ""id"": ""541cb34f-c4a6-41a7-87bf-67ecfbeff585"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5e580202-4698-43e1-8a2f-698e25c434cd"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""af1f253b-de18-49db-9fcc-e20f5657a723"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c43a4ffd-3d54-4cbd-a642-09c9bf2e6754"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7ba0fb36-0912-45e9-b052-c74ac59c073d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""728ce4ef-c908-4af3-bd47-d21a213d8731"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8384d33d-1e61-4187-9aa1-65bbd4741845"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""632a48ba-c37c-4268-84bf-d913dea63ec5"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f70bebf6-0b1c-4294-a69b-bcb309fde9bd"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed715265-6f69-4593-b3ae-ffb386aa16c6"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b4d0ab3-c9b3-4895-9cf8-dc2d9a37c9b7"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3a0b3ac-69d4-4ba2-aeca-78bc71fec34a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -326,10 +575,16 @@ namespace ClownFiesta.Core
             m_Gameplay_Q = m_Gameplay.FindAction("Q", throwIfNotFound: true);
             m_Gameplay_E = m_Gameplay.FindAction("E", throwIfNotFound: true);
             m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
+            m_Gameplay_OpenTeamSelectionMenu = m_Gameplay.FindAction("Open Team Selection Menu", throwIfNotFound: true);
             // Team Selection
             m_TeamSelection = asset.FindActionMap("Team Selection", throwIfNotFound: true);
             m_TeamSelection_Close = m_TeamSelection.FindAction("Close", throwIfNotFound: true);
             m_TeamSelection_Move = m_TeamSelection.FindAction("Move", throwIfNotFound: true);
+            // UI
+            m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+            m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
+            m_UI_Close = m_UI.FindAction("Close", throwIfNotFound: true);
+            m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -383,6 +638,7 @@ namespace ClownFiesta.Core
         private readonly InputAction m_Gameplay_Q;
         private readonly InputAction m_Gameplay_E;
         private readonly InputAction m_Gameplay_Aim;
+        private readonly InputAction m_Gameplay_OpenTeamSelectionMenu;
         public struct GameplayActions
         {
             private @CharacterControls m_Wrapper;
@@ -391,6 +647,7 @@ namespace ClownFiesta.Core
             public InputAction @Q => m_Wrapper.m_Gameplay_Q;
             public InputAction @E => m_Wrapper.m_Gameplay_E;
             public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
+            public InputAction @OpenTeamSelectionMenu => m_Wrapper.m_Gameplay_OpenTeamSelectionMenu;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -412,6 +669,9 @@ namespace ClownFiesta.Core
                     @Aim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
                     @Aim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
                     @Aim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                    @OpenTeamSelectionMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenTeamSelectionMenu;
+                    @OpenTeamSelectionMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenTeamSelectionMenu;
+                    @OpenTeamSelectionMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenTeamSelectionMenu;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -428,6 +688,9 @@ namespace ClownFiesta.Core
                     @Aim.started += instance.OnAim;
                     @Aim.performed += instance.OnAim;
                     @Aim.canceled += instance.OnAim;
+                    @OpenTeamSelectionMenu.started += instance.OnOpenTeamSelectionMenu;
+                    @OpenTeamSelectionMenu.performed += instance.OnOpenTeamSelectionMenu;
+                    @OpenTeamSelectionMenu.canceled += instance.OnOpenTeamSelectionMenu;
                 }
             }
         }
@@ -473,6 +736,55 @@ namespace ClownFiesta.Core
             }
         }
         public TeamSelectionActions @TeamSelection => new TeamSelectionActions(this);
+
+        // UI
+        private readonly InputActionMap m_UI;
+        private IUIActions m_UIActionsCallbackInterface;
+        private readonly InputAction m_UI_Move;
+        private readonly InputAction m_UI_Close;
+        private readonly InputAction m_UI_Accept;
+        public struct UIActions
+        {
+            private @CharacterControls m_Wrapper;
+            public UIActions(@CharacterControls wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Move => m_Wrapper.m_UI_Move;
+            public InputAction @Close => m_Wrapper.m_UI_Close;
+            public InputAction @Accept => m_Wrapper.m_UI_Accept;
+            public InputActionMap Get() { return m_Wrapper.m_UI; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+            public void SetCallbacks(IUIActions instance)
+            {
+                if (m_Wrapper.m_UIActionsCallbackInterface != null)
+                {
+                    @Move.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMove;
+                    @Move.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMove;
+                    @Move.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMove;
+                    @Close.started -= m_Wrapper.m_UIActionsCallbackInterface.OnClose;
+                    @Close.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnClose;
+                    @Close.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnClose;
+                    @Accept.started -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
+                    @Accept.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
+                    @Accept.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
+                }
+                m_Wrapper.m_UIActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Move.started += instance.OnMove;
+                    @Move.performed += instance.OnMove;
+                    @Move.canceled += instance.OnMove;
+                    @Close.started += instance.OnClose;
+                    @Close.performed += instance.OnClose;
+                    @Close.canceled += instance.OnClose;
+                    @Accept.started += instance.OnAccept;
+                    @Accept.performed += instance.OnAccept;
+                    @Accept.canceled += instance.OnAccept;
+                }
+            }
+        }
+        public UIActions @UI => new UIActions(this);
         private int m_KBMSchemeIndex = -1;
         public InputControlScheme KBMScheme
         {
@@ -497,11 +809,18 @@ namespace ClownFiesta.Core
             void OnQ(InputAction.CallbackContext context);
             void OnE(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
+            void OnOpenTeamSelectionMenu(InputAction.CallbackContext context);
         }
         public interface ITeamSelectionActions
         {
             void OnClose(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
+        }
+        public interface IUIActions
+        {
+            void OnMove(InputAction.CallbackContext context);
+            void OnClose(InputAction.CallbackContext context);
+            void OnAccept(InputAction.CallbackContext context);
         }
     }
 }

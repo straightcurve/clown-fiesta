@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
@@ -16,6 +18,9 @@ namespace ClownFiesta.Core {
 
         public float radius = 10f;
         public LayerMask mask;
+
+
+        public CapturedEvent Captured = new CapturedEvent();
 
         [SerializeField] private Image team1ProgressImage;
         [SerializeField] private Image team2ProgressImage;
@@ -64,6 +69,8 @@ namespace ClownFiesta.Core {
                 return;
 
             enabled = false;
+
+            Captured?.Invoke(new CapturedEventArgs(team1Progress > maxProgress ? 0 : 1));
         }
 
         private int PopulateUniqueTargetsList(Vector3 position, float radius) {
@@ -86,5 +93,17 @@ namespace ClownFiesta.Core {
         private void OnDrawGizmos() {
             Gizmos.DrawWireSphere(transform.position, radius);
         }
+
+        [Serializable]
+        public class CapturedEvent: UnityEvent<CapturedEventArgs> { }
+    }
+
+    public class CapturedEventArgs: EventArgs {
+
+        public CapturedEventArgs(int team) {
+            this.By = team;
+        }
+
+        public int By { get; }
     }
 }

@@ -15,6 +15,12 @@ namespace ClownFiesta.Core.Movement {
             move.canceled += OnMove;
         }
 
+        private void OnDestroy() {
+            var move = controller.Input.actions.FindActionMap("Gameplay").FindAction("Move");
+            move.performed -= OnMove;
+            move.canceled -= OnMove;
+        }
+
         protected override void FixedUpdate() {
             base.FixedUpdate();
         }

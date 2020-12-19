@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace ClownFiesta.Core {
 
@@ -16,6 +17,7 @@ namespace ClownFiesta.Core {
         public static Teams Teams;
         public Transform overlay;
         public CharacterSelectionMenu menu;
+        public TeamSelectionMenu teamSelectionMenu;
 
         private void Update()
         {
@@ -46,7 +48,23 @@ namespace ClownFiesta.Core {
 
                 var instance = Instantiate(menu.gameObject, overlay).GetComponent<CharacterSelectionMenu>();
                 instance.SetPlayerIndex(input.playerIndex);
+
+                input.actions.FindActionMap("Gameplay").FindAction("Open Team Selection Menu").started += OpenTeamSelectionNenu;
             };
+        }
+
+        private void OpenTeamSelectionNenu(InputAction.CallbackContext ctx) {
+            teamSelectionMenu.gameObject.SetActive(true);
+        }
+
+        private void OnDestroy() {
+            Controllers.ForEach(c => c.Input.actions.FindActionMap("Gameplay").FindAction("Open Team Selection Menu").started -= OpenTeamSelectionNenu);
+        }
+
+        public void OnCapturedObjective(CapturedEventArgs args) {
+            print($"Team {args.By + 1} won!");
+
+            SceneManager.LoadScene("debug", LoadSceneMode.Single);
         }
     }
 }
