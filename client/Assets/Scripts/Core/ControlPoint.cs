@@ -30,10 +30,37 @@ namespace ClownFiesta.Core {
             if (count == 0)
                 return;
 
-            team1Progress += Time.deltaTime * scaling;
-            team1ProgressImage.fillAmount = team1Progress / maxProgress / 2;
+            float team1Count = 0;
+            float team2Count = 0;
+            unique.ForEach(c => {
+                switch (c.Team)
+                {
+                    case 0:
+                        team1Count++;
+                        break;
+                    case 1:
+                        team2Count++;
+                        break;
+                    default:
+                        break;
+                }
+            });
 
-            if (team1Progress < maxProgress)
+            if (team1Count / 2 > team2Count) {
+                team1Progress += Time.deltaTime * scaling;
+                team1ProgressImage.fillAmount = team1Progress / maxProgress / 2;
+
+                if (team1Progress < maxProgress)
+                    return;
+
+            } else if (team2Count / 2 > team1Count) {
+                team2Progress += Time.deltaTime * scaling;
+                team2ProgressImage.fillAmount = team2Progress / maxProgress / 2;
+
+                if (team2Progress < maxProgress)
+                    return;
+
+            } else
                 return;
 
             enabled = false;

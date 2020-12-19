@@ -12,6 +12,12 @@ namespace ClownFiesta.Core {
         }
         [SerializeField] private string _character;
 
+        public Character ControlledCharacter {
+            get => _controllerCharacter;
+            set => _controllerCharacter = value;
+        }
+        [SerializeField] private Character _controllerCharacter;
+
 
         public PlayerController(PlayerInput input) {
             Input = input;

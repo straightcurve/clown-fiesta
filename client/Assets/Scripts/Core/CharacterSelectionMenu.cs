@@ -30,6 +30,7 @@ namespace ClownFiesta.Core {
             //  create shit
             var character = Instantiate(characterPrefab.gameObject).GetComponent<Character>();
             character.Controller = Game.Controllers[playerIndex];
+            Game.Controllers[playerIndex].ControlledCharacter = character;
 
             //  disable menu
             gameObject.SetActive(false);

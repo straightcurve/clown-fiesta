@@ -12,6 +12,8 @@ namespace ClownFiesta.Core {
         public PlayerInputManager inputManager;
         public List<PlayerController> controllers = new List<PlayerController>();
         public static List<PlayerController> Controllers;
+        public Teams teams = new Teams();
+        public static Teams Teams;
         public Transform overlay;
         public CharacterSelectionMenu menu;
 
@@ -31,6 +33,7 @@ namespace ClownFiesta.Core {
 
         private void Awake() {
             Controllers = controllers;
+            Teams = teams;
         }
 
         private void Start() {

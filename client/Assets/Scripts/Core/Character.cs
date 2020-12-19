@@ -20,6 +20,8 @@ namespace ClownFiesta.Core {
         protected PlayerController controller;
         public event Action<Character> ControllerChanged;
 
+        public int Team { get; set; } = -1;
+
         protected Movement.Movement movement;
 
         protected virtual void OnEnable() {
