@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 namespace ClownFiesta.Core {
 
@@ -59,12 +58,6 @@ namespace ClownFiesta.Core {
 
         private void OnDestroy() {
             Controllers.ForEach(c => c.Input.actions.FindActionMap("Gameplay").FindAction("Open Team Selection Menu").started -= OpenTeamSelectionNenu);
-        }
-
-        public void OnCapturedObjective(CapturedEventArgs args) {
-            print($"Team {args.By + 1} won!");
-
-            SceneManager.LoadScene("debug", LoadSceneMode.Single);
         }
     }
 }

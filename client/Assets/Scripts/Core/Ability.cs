@@ -57,6 +57,9 @@ namespace ClownFiesta.Core {
         }
 
         protected virtual void OnDestroy() {
+            if (inputAction == null)
+                return;
+
             inputAction.started -= OnButtonPressed;
         }
 
