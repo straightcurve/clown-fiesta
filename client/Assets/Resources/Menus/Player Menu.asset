@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8196a2479b3bbadaf898019f6dd10686, type: 3}
+  m_Name: Player Menu
+  m_EditorClassIdentifier: 
+  tabs:
+  - Character
+  - Team
+  pages:
+  - {fileID: 856558131139859363, guid: 066b32467d8ddb298abd21078de10564, type: 3}
+  - {fileID: 0}

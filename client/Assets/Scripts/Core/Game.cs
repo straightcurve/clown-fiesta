@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ClownFiesta.Core.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,8 +15,8 @@ namespace ClownFiesta.Core {
         public static List<PlayerController> Controllers;
         public Teams teams = new Teams();
         public static Teams Teams;
-        public Transform overlay;
-        public CharacterSelectionMenu menu;
+        public Transform splitMenuOverlay;
+        public Menu menu;
         public TeamSelectionMenu teamSelectionMenu;
 
         private void Update()
@@ -41,12 +42,16 @@ namespace ClownFiesta.Core {
             Application.targetFrameRate = 300;
 
             inputManager.onPlayerJoined += (input) => {
-                Controllers.Add(new PlayerController(input));
+                var controller = new PlayerController(input);
+                Controllers.Add(controller);
+
                 input.transform.SetParent(transform);
                 input.name = $"Player {input.playerIndex + 1}";
 
-                var instance = Instantiate(menu.gameObject, overlay).GetComponent<CharacterSelectionMenu>();
-                instance.SetPlayerIndex(input.playerIndex);
+                var instance = Instantiate(menu.gameObject, splitMenuOverlay).GetComponent<Menu>();
+                instance.Controller = controller;
+
+                input.SwitchCurrentActionMap("UI");
 
                 input.actions.FindActionMap("Gameplay").FindAction("Open Team Selection Menu").started += OpenTeamSelectionNenu;
             };

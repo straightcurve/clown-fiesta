@@ -59,6 +59,14 @@ namespace ClownFiesta.Core
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Open Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""120509a4-edc8-4daa-99d5-3d14dadf32fe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -224,6 +232,28 @@ namespace ClownFiesta.Core
                     ""processors"": """",
                     ""groups"": ""KB+M"",
                     ""action"": ""Open Team Selection Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""025d2d44-3ea8-4d94-84cd-c5ad33704499"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Open Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a98dc98-7d9b-49d9-8a5b-b1083e7d6fba"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Open Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -576,6 +606,7 @@ namespace ClownFiesta.Core
             m_Gameplay_E = m_Gameplay.FindAction("E", throwIfNotFound: true);
             m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
             m_Gameplay_OpenTeamSelectionMenu = m_Gameplay.FindAction("Open Team Selection Menu", throwIfNotFound: true);
+            m_Gameplay_OpenMenu = m_Gameplay.FindAction("Open Menu", throwIfNotFound: true);
             // Team Selection
             m_TeamSelection = asset.FindActionMap("Team Selection", throwIfNotFound: true);
             m_TeamSelection_Close = m_TeamSelection.FindAction("Close", throwIfNotFound: true);
@@ -639,6 +670,7 @@ namespace ClownFiesta.Core
         private readonly InputAction m_Gameplay_E;
         private readonly InputAction m_Gameplay_Aim;
         private readonly InputAction m_Gameplay_OpenTeamSelectionMenu;
+        private readonly InputAction m_Gameplay_OpenMenu;
         public struct GameplayActions
         {
             private @CharacterControls m_Wrapper;
@@ -648,6 +680,7 @@ namespace ClownFiesta.Core
             public InputAction @E => m_Wrapper.m_Gameplay_E;
             public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
             public InputAction @OpenTeamSelectionMenu => m_Wrapper.m_Gameplay_OpenTeamSelectionMenu;
+            public InputAction @OpenMenu => m_Wrapper.m_Gameplay_OpenMenu;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -672,6 +705,9 @@ namespace ClownFiesta.Core
                     @OpenTeamSelectionMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenTeamSelectionMenu;
                     @OpenTeamSelectionMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenTeamSelectionMenu;
                     @OpenTeamSelectionMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenTeamSelectionMenu;
+                    @OpenMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenMenu;
+                    @OpenMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenMenu;
+                    @OpenMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnOpenMenu;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -691,6 +727,9 @@ namespace ClownFiesta.Core
                     @OpenTeamSelectionMenu.started += instance.OnOpenTeamSelectionMenu;
                     @OpenTeamSelectionMenu.performed += instance.OnOpenTeamSelectionMenu;
                     @OpenTeamSelectionMenu.canceled += instance.OnOpenTeamSelectionMenu;
+                    @OpenMenu.started += instance.OnOpenMenu;
+                    @OpenMenu.performed += instance.OnOpenMenu;
+                    @OpenMenu.canceled += instance.OnOpenMenu;
                 }
             }
         }
@@ -810,6 +849,7 @@ namespace ClownFiesta.Core
             void OnE(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
             void OnOpenTeamSelectionMenu(InputAction.CallbackContext context);
+            void OnOpenMenu(InputAction.CallbackContext context);
         }
         public interface ITeamSelectionActions
         {

@@ -174,8 +174,8 @@ MonoBehaviour:
     m_Bits: 512
   inputManager: {fileID: 38880390}
   controllers: []
-  overlay: {fileID: 1193544230}
-  menu: {fileID: 856558131139859375, guid: 066b32467d8ddb298abd21078de10564, type: 3}
+  splitMenuOverlay: {fileID: 1193544230}
+  menu: {fileID: 4115585794775068755, guid: fbe3fa1d3d353f4ccbad2d9baf45aaf3, type: 3}
   teamSelectionMenu: {fileID: 1525668025}
 --- !u!114 &38880390
 MonoBehaviour:
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 1193544230}
   - component: {fileID: 1193544231}
   m_Layer: 5
-  m_Name: Character Selection
+  m_Name: Split Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
