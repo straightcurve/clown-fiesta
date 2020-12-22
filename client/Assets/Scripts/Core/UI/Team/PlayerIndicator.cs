@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 using Text = TMPro.TextMeshProUGUI;
 
-namespace ClownFiesta.Core {
+namespace ClownFiesta.Core.UI.Team {
 
     public class PlayerIndicator : MonoBehaviour
     {
@@ -17,8 +17,7 @@ namespace ClownFiesta.Core {
         ///     1: First team
         ///     2: Second team
         /// </summary>
-        [SerializeField] private int current = 0;
-        [SerializeField] private float spacing = 200;
+        private int current = 0;
         [SerializeField] private Text[] texts = new Text[3];
 
         private PlayerController _controller;

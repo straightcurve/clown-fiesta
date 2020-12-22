@@ -1,11 +1,10 @@
 using ClownFiesta.Core.UI;
 using UnityEngine;
 
-namespace ClownFiesta.Core {
+namespace ClownFiesta.Core.UI.Team {
 
     public class TeamMenu: MonoBehaviour, IMenu {
         [SerializeField] private PlayerIndicator indicator;
-        [SerializeField] private Transform grid;
 
         public PlayerController Controller {
             get => controller;
