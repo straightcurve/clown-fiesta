@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 856558131139859360}
   - component: {fileID: 856558131139859374}
   - component: {fileID: 856558131139859361}
-  - component: {fileID: 856558131139859375}
+  - component: {fileID: 4115585794523894964}
   m_Layer: 5
   m_Name: Character Menu
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &856558131139859375
+--- !u!114 &4115585794523894964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,12 +148,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 856558131139859363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e61af23e79f3328b460f5605b6600a, type: 3}
+  m_Script: {fileID: 11500000, guid: 55bebac5b2c9857388f2ef12a6429fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiInputModule: {fileID: 0}
-  eventSystem: {fileID: 0}
-  title: {fileID: 0}
   selectableCharacterPrefab: {fileID: 2862559991550302226, guid: 8e05aa8a7705a68c78af7befd7fa504d,
     type: 3}
   grid: {fileID: 1560513549}

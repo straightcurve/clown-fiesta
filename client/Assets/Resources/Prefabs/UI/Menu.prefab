@@ -541,21 +541,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4115585794523894964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3674484763368736540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55bebac5b2c9857388f2ef12a6429fb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectableCharacterPrefab: {fileID: 2862559991550302226, guid: 8e05aa8a7705a68c78af7befd7fa504d,
-    type: 3}
-  grid: {fileID: 4115585795648002226}
 --- !u!1 &4115585794730768192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,8 +1302,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Menu
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 856558131139859375, guid: be7183f33992982f1bcfde7bce710112, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be7183f33992982f1bcfde7bce710112, type: 3}
 --- !u!1 &3674484763368736540 stripped
 GameObject:
@@ -1329,12 +1313,6 @@ GameObject:
 --- !u!224 &3674484763368736543 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 856558131139859360, guid: be7183f33992982f1bcfde7bce710112,
-    type: 3}
-  m_PrefabInstance: {fileID: 4115585794523894975}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &4115585795648002226 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1560513549, guid: be7183f33992982f1bcfde7bce710112,
     type: 3}
   m_PrefabInstance: {fileID: 4115585794523894975}
   m_PrefabAsset: {fileID: 0}
