@@ -106,6 +106,9 @@ namespace ClownFiesta.Core.UI {
             if (Controller == null)
                 return;
 
+            if (Controller.Input == null)
+                return;
+
             Controller.Input.actions.FindActionMap("UI").FindAction("Close").started -= Close;
             Controller.Input.actions.FindActionMap("UI").FindAction("Previous").started -= GoToPreviousTab;
             Controller.Input.actions.FindActionMap("UI").FindAction("Next").started -= GoToNextTab;
