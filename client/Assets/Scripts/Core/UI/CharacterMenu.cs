@@ -16,6 +16,7 @@ namespace ClownFiesta.Core.UI {
             }
         }
         private PlayerController controller;
+        public bool Selectable => Controller != null;
 
         private void Start() {
             Initialize();

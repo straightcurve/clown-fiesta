@@ -17,7 +17,6 @@ namespace ClownFiesta.Core {
         public static Teams Teams;
         public Transform splitMenuOverlay;
         public Menu menu;
-        public TeamSelectionMenu teamSelectionMenu;
 
         private void Update()
         {
@@ -52,17 +51,7 @@ namespace ClownFiesta.Core {
                 instance.Controller = controller;
 
                 input.SwitchCurrentActionMap("UI");
-
-                input.actions.FindActionMap("Gameplay").FindAction("Open Team Selection Menu").started += OpenTeamSelectionNenu;
             };
-        }
-
-        private void OpenTeamSelectionNenu(InputAction.CallbackContext ctx) {
-            teamSelectionMenu.gameObject.SetActive(true);
-        }
-
-        private void OnDestroy() {
-            Controllers.ForEach(c => c.Input.actions.FindActionMap("Gameplay").FindAction("Open Team Selection Menu").started -= OpenTeamSelectionNenu);
         }
     }
 }

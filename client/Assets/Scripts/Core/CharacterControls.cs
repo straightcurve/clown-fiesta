@@ -442,6 +442,22 @@ namespace ClownFiesta.Core
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e687bd8-0805-41e1-9153-d671de739609"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Previous"",
+                    ""type"": ""Button"",
+                    ""id"": ""3542d2ce-4b89-4aa7-9a51-e93fd4501e54"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -513,17 +529,6 @@ namespace ClownFiesta.Core
                 },
                 {
                     ""name"": """",
-                    ""id"": ""632a48ba-c37c-4268-84bf-d913dea63ec5"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KB+M"",
-                    ""action"": ""Close"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""f70bebf6-0b1c-4294-a69b-bcb309fde9bd"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -563,6 +568,50 @@ namespace ClownFiesta.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62000197-251c-422a-8016-7379e1ac3bc0"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""600fc7e4-87c3-4a19-a6d3-4da3e58548f0"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4c20e0a-55ce-4bf6-bf34-581ae48e35ca"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f77343b5-a54e-49ac-88ca-5816292ab746"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Previous"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -616,6 +665,8 @@ namespace ClownFiesta.Core
             m_UI_Move = m_UI.FindAction("Move", throwIfNotFound: true);
             m_UI_Close = m_UI.FindAction("Close", throwIfNotFound: true);
             m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
+            m_UI_Next = m_UI.FindAction("Next", throwIfNotFound: true);
+            m_UI_Previous = m_UI.FindAction("Previous", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -782,6 +833,8 @@ namespace ClownFiesta.Core
         private readonly InputAction m_UI_Move;
         private readonly InputAction m_UI_Close;
         private readonly InputAction m_UI_Accept;
+        private readonly InputAction m_UI_Next;
+        private readonly InputAction m_UI_Previous;
         public struct UIActions
         {
             private @CharacterControls m_Wrapper;
@@ -789,6 +842,8 @@ namespace ClownFiesta.Core
             public InputAction @Move => m_Wrapper.m_UI_Move;
             public InputAction @Close => m_Wrapper.m_UI_Close;
             public InputAction @Accept => m_Wrapper.m_UI_Accept;
+            public InputAction @Next => m_Wrapper.m_UI_Next;
+            public InputAction @Previous => m_Wrapper.m_UI_Previous;
             public InputActionMap Get() { return m_Wrapper.m_UI; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -807,6 +862,12 @@ namespace ClownFiesta.Core
                     @Accept.started -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
                     @Accept.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
                     @Accept.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
+                    @Next.started -= m_Wrapper.m_UIActionsCallbackInterface.OnNext;
+                    @Next.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnNext;
+                    @Next.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnNext;
+                    @Previous.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPrevious;
+                    @Previous.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPrevious;
+                    @Previous.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPrevious;
                 }
                 m_Wrapper.m_UIActionsCallbackInterface = instance;
                 if (instance != null)
@@ -820,6 +881,12 @@ namespace ClownFiesta.Core
                     @Accept.started += instance.OnAccept;
                     @Accept.performed += instance.OnAccept;
                     @Accept.canceled += instance.OnAccept;
+                    @Next.started += instance.OnNext;
+                    @Next.performed += instance.OnNext;
+                    @Next.canceled += instance.OnNext;
+                    @Previous.started += instance.OnPrevious;
+                    @Previous.performed += instance.OnPrevious;
+                    @Previous.canceled += instance.OnPrevious;
                 }
             }
         }
@@ -861,6 +928,8 @@ namespace ClownFiesta.Core
             void OnMove(InputAction.CallbackContext context);
             void OnClose(InputAction.CallbackContext context);
             void OnAccept(InputAction.CallbackContext context);
+            void OnNext(InputAction.CallbackContext context);
+            void OnPrevious(InputAction.CallbackContext context);
         }
     }
 }

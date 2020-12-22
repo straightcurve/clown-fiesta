@@ -8,5 +8,7 @@ namespace ClownFiesta.Core.UI {
 
     public interface IMenu {
         PlayerController Controller { get; set; }
+
+        bool Selectable { get; }
     }
 }

@@ -90,3 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: 0
   spacing: 200
+  texts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

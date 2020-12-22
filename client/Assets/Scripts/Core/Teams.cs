@@ -12,16 +12,20 @@ namespace ClownFiesta.Core {
 
 
         public void AddToFirstTeam(Character character) {
-            if (First.Any(c => c.ActualCharacter == character.ActualCharacter))
+            if (First.Any(c => c == character))
                 return;
+
+            Second.Remove(character);
 
             character.Team = 0;
             First.Add(character);
         }
 
         public void AddToSecondTeam(Character character) {
-            if (Second.Any(c => c.ActualCharacter == character.ActualCharacter))
+            if (Second.Any(c => c == character))
                 return;
+
+            First.Remove(character);
 
             character.Team = 1;
             Second.Add(character);
