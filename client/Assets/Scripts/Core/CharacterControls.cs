@@ -37,6 +37,22 @@ namespace ClownFiesta.Core
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Primary Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""47dbf9d6-f155-4e79-b543-556960df7370"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Secondary Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""58174110-bb86-465d-b900-379919305399"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""E"",
                     ""type"": ""Button"",
                     ""id"": ""db6c62df-43d6-4da8-8aa1-634896865eea"",
@@ -254,6 +270,50 @@ namespace ClownFiesta.Core
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Open Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c68162ea-8f56-4f52-b3dd-bfea6bfc7964"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Primary Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54830ff8-2c25-4aba-abfa-7fc7e7e2e8d7"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Primary Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d972c5a-b895-4ef8-b257-beb3fbee9bc0"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KB+M"",
+                    ""action"": ""Secondary Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e80343bb-8e3f-46d4-950a-81608b5c1812"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Secondary Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -652,6 +712,8 @@ namespace ClownFiesta.Core
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
             m_Gameplay_Q = m_Gameplay.FindAction("Q", throwIfNotFound: true);
+            m_Gameplay_PrimaryAttack = m_Gameplay.FindAction("Primary Attack", throwIfNotFound: true);
+            m_Gameplay_SecondaryAttack = m_Gameplay.FindAction("Secondary Attack", throwIfNotFound: true);
             m_Gameplay_E = m_Gameplay.FindAction("E", throwIfNotFound: true);
             m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
             m_Gameplay_OpenTeamSelectionMenu = m_Gameplay.FindAction("Open Team Selection Menu", throwIfNotFound: true);
@@ -718,6 +780,8 @@ namespace ClownFiesta.Core
         private IGameplayActions m_GameplayActionsCallbackInterface;
         private readonly InputAction m_Gameplay_Move;
         private readonly InputAction m_Gameplay_Q;
+        private readonly InputAction m_Gameplay_PrimaryAttack;
+        private readonly InputAction m_Gameplay_SecondaryAttack;
         private readonly InputAction m_Gameplay_E;
         private readonly InputAction m_Gameplay_Aim;
         private readonly InputAction m_Gameplay_OpenTeamSelectionMenu;
@@ -728,6 +792,8 @@ namespace ClownFiesta.Core
             public GameplayActions(@CharacterControls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Gameplay_Move;
             public InputAction @Q => m_Wrapper.m_Gameplay_Q;
+            public InputAction @PrimaryAttack => m_Wrapper.m_Gameplay_PrimaryAttack;
+            public InputAction @SecondaryAttack => m_Wrapper.m_Gameplay_SecondaryAttack;
             public InputAction @E => m_Wrapper.m_Gameplay_E;
             public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
             public InputAction @OpenTeamSelectionMenu => m_Wrapper.m_Gameplay_OpenTeamSelectionMenu;
@@ -747,6 +813,12 @@ namespace ClownFiesta.Core
                     @Q.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnQ;
                     @Q.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnQ;
                     @Q.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnQ;
+                    @PrimaryAttack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPrimaryAttack;
+                    @PrimaryAttack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPrimaryAttack;
+                    @PrimaryAttack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPrimaryAttack;
+                    @SecondaryAttack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSecondaryAttack;
+                    @SecondaryAttack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSecondaryAttack;
+                    @SecondaryAttack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSecondaryAttack;
                     @E.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnE;
                     @E.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnE;
                     @E.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnE;
@@ -769,6 +841,12 @@ namespace ClownFiesta.Core
                     @Q.started += instance.OnQ;
                     @Q.performed += instance.OnQ;
                     @Q.canceled += instance.OnQ;
+                    @PrimaryAttack.started += instance.OnPrimaryAttack;
+                    @PrimaryAttack.performed += instance.OnPrimaryAttack;
+                    @PrimaryAttack.canceled += instance.OnPrimaryAttack;
+                    @SecondaryAttack.started += instance.OnSecondaryAttack;
+                    @SecondaryAttack.performed += instance.OnSecondaryAttack;
+                    @SecondaryAttack.canceled += instance.OnSecondaryAttack;
                     @E.started += instance.OnE;
                     @E.performed += instance.OnE;
                     @E.canceled += instance.OnE;
@@ -913,6 +991,8 @@ namespace ClownFiesta.Core
         {
             void OnMove(InputAction.CallbackContext context);
             void OnQ(InputAction.CallbackContext context);
+            void OnPrimaryAttack(InputAction.CallbackContext context);
+            void OnSecondaryAttack(InputAction.CallbackContext context);
             void OnE(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
             void OnOpenTeamSelectionMenu(InputAction.CallbackContext context);

@@ -15,6 +15,7 @@ namespace ClownFiesta.Characters.Android {
         private Android_E _E;
         private Android_LeftShift _LeftShift;
         private Android_Space _Space;
+        private Android_PrimaryAttack _PrimaryAttack;
         private Movement movement;
 
         public Android(GameObject owner, CharacterData data): base() {
@@ -41,6 +42,10 @@ namespace ClownFiesta.Characters.Android {
             var q = owner.GetComponent<Android_Q>();
             q.Inject(controls.FindActionMap("Gameplay").FindAction("Q"));
             _Q = q;
+
+            var primary = owner.GetComponent<Android_PrimaryAttack>();
+            primary.Inject(controls.FindActionMap("Gameplay").FindAction("Primary Attack"));
+            _PrimaryAttack = primary;
         }
 
         public float PassiveMultiplier {

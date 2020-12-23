@@ -22,6 +22,22 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Primary Attack",
+                    "type": "Button",
+                    "id": "47dbf9d6-f155-4e79-b543-556960df7370",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Secondary Attack",
+                    "type": "Button",
+                    "id": "58174110-bb86-465d-b900-379919305399",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "E",
                     "type": "Button",
                     "id": "db6c62df-43d6-4da8-8aa1-634896865eea",
@@ -239,6 +255,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Open Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c68162ea-8f56-4f52-b3dd-bfea6bfc7964",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KB+M",
+                    "action": "Primary Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54830ff8-2c25-4aba-abfa-7fc7e7e2e8d7",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Primary Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d972c5a-b895-4ef8-b257-beb3fbee9bc0",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KB+M",
+                    "action": "Secondary Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e80343bb-8e3f-46d4-950a-81608b5c1812",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Secondary Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

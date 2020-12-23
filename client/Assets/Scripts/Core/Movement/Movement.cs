@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +12,13 @@ namespace ClownFiesta.Core.Movement {
             set => _speed = value;
         }
         [SerializeField] private float _speed = 10f;
+        [SerializeField] private float _initialSpeed = 10f;
 
         public bool CanMove { get; set; }
         public bool CanRotate { get; set; }
 
         private Rigidbody2D rigidbody;
+        private Coroutine slowCoroutine;
         public Vector2 Direction {
             get => _direction;
             set => _direction = value.normalized;
@@ -57,6 +61,31 @@ namespace ClownFiesta.Core.Movement {
 
             //  cache latest direction
             _latestFacingDirection = Direction.normalized;
+        }
+
+        public virtual void Slow(float percentageAmount, float durationInMs) {
+            _speed -= _speed * percentageAmount;
+
+            if (slowCoroutine != null)
+                StopCoroutine(slowCoroutine);
+
+            slowCoroutine = StartCoroutine(_RevertToInitialSpeed(durationInMs));
+        }
+
+        public virtual void RemoveSlow() {
+            if (slowCoroutine != null)
+                StopCoroutine(slowCoroutine);
+
+            _speed = _initialSpeed;
+        }
+
+        protected virtual IEnumerator _RevertToInitialSpeed(float afterMs) {
+            yield return new WaitForSeconds(afterMs);
+
+            _speed = _initialSpeed;
+
+            if (slowCoroutine != null)
+                StopCoroutine(slowCoroutine);
         }
     }
 }
