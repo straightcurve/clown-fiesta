@@ -15,3 +15,5 @@ MonoBehaviour:
   characterName: Android
   characterPrefab: {fileID: -4886218899181373589, guid: 4a84de1f04f22ed09a7c7199d079cec5,
     type: 3}
+  portrait: {fileID: 21300000, guid: 201b0b95e5a648f9aa7794d67bc7ee4d, type: 3}
+  model: {fileID: 2193225384772313265, guid: c71849444b9311565873d6f2d5e242d4, type: 3}

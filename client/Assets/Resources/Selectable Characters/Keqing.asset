@@ -15,3 +15,5 @@ MonoBehaviour:
   characterName: Keqing
   characterPrefab: {fileID: 7136690555387679284, guid: 6f13a7c3dbaf8ad70bdcc641387cabe8,
     type: 3}
+  portrait: {fileID: 21300000, guid: 7021998c9ab2e756bb815761b5777fc6, type: 3}
+  model: {fileID: 2193225384772313265, guid: 80f9b8eb66a44b40eb9f44c9dd329fc1, type: 3}

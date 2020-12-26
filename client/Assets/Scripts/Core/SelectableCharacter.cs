@@ -7,5 +7,7 @@ namespace ClownFiesta.Core {
     public class SelectableCharacter: ScriptableObject {
         public string characterName;
         public Character characterPrefab;
+        public Sprite portrait;
+        public GameObject model;
     }
 }

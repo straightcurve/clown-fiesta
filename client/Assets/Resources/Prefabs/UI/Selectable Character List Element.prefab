@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: 2B
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -221,9 +221,9 @@ GameObject:
   - component: {fileID: 7449283765636297554}
   - component: {fileID: 7449283765636297555}
   - component: {fileID: 7449283765636297552}
-  - component: {fileID: 7449283765525674563}
+  - component: {fileID: 2566013701866501496}
   m_Layer: 5
-  m_Name: Champion Data List Element
+  m_Name: Selectable Character List Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7449283765525674563
+--- !u!114 &2566013701866501496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7449283765636297550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b49614dd9a92e61bb603adac10a7f90, type: 3}
+  m_Script: {fileID: 11500000, guid: 8908055bd94d54bdea2fe9fd9e0e8f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 7449283764414342708}
